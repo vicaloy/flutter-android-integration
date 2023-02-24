@@ -1,6 +1,8 @@
 package com.valoy.myandroid
 
 import android.app.Application
+import com.valoy.notmainlib.LibModule
+import com.valoy.notmainlib.ui.main.FlutterIntegrationService
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.dart.DartExecutor
@@ -25,6 +27,8 @@ class App : Application() {
         FlutterEngineCache
             .getInstance()
             .put(FLUTTER_ENGINE_ID, flutterEngine)
+
+        LibModule.start(AppFlutterIntegrationService())
     }
 
 }

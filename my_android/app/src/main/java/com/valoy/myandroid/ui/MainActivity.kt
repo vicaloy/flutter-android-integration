@@ -1,4 +1,4 @@
-package com.valoy.myandroid
+package com.valoy.myandroid.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.valoy.myandroid.App.Companion.FLUTTER_ENGINE_ID
+import com.valoy.myandroid.R
 import com.valoy.myandroid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +30,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            val intent = FlutterStartActivity
-            .withCachedEngine(FLUTTER_ENGINE_ID)
+            val intent = FlutterStartActivity.withCachedEngine(FLUTTER_ENGINE_ID)
             .build(this)
             startActivity(intent)
         }
